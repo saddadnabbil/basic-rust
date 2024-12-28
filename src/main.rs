@@ -1,5 +1,7 @@
+mod chatgpt;
+
 fn main() {
-    println!("Hello, world!");
+    chatgpt::learn::run();
 }
 
 #[allow(dead_code)]
@@ -71,4 +73,35 @@ fn variable_test() {
 
     println!("\nvariable _");
     let _ = run_something();
+}
+
+#[test]
+fn data_type_test() {
+    // signed interger
+    let numeric1 = 1; // default 32 if not defined
+                      // let numeric2: i8 = 128 // output: error[E0107]: literal out of range for `i8`
+    let numeric2: i8 = 127;
+    let numeric3: i64 = 255;
+
+    println!(
+        "\nnumeric1: {}, numeric2: {}, numeric3: {}",
+        numeric1, numeric2, numeric3
+    );
+
+    // unsigned interger
+    let numeric4 = 1; // default 32 if not defined
+                      // let numeric5: u8 = 256 // output: error[E0107]: literal out of range for `u8`
+    let numeric5: u8 = 255;
+
+    println!("\nnumeric4: {}, numeric5: {}", numeric4, numeric5);
+
+    // float
+    let numeric6 = 1.30; // default 32 if not defined
+    let numeric7: f32 = 1.430; // default 32 if not defined
+    let numeric8: f64 = 1.92920; // default 64 if not defined
+
+    println!(
+        "\nnumeric6: {}, numeric7: {}, numeric8: {:.2}",
+        numeric6, numeric7, numeric8
+    );
 }
